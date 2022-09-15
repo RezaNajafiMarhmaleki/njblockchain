@@ -13,7 +13,7 @@ namespace njBlockChain
 
         public Trx [] trxes { set; get; }
 
-        public int proof { set; get; }
+        public long proof { set; get; }
 
         public string previous_hash { set; get; }
 
