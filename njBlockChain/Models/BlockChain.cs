@@ -63,7 +63,7 @@ namespace njBlockChain.Models
                 byte[] salt = Encoding.UTF8.GetBytes(block.ToString());
                 byte[] hashed = sha256.ComputeHash(salt);
 
-                return Convert.ToBase64String(hashed).Replace("-", "");
+                return Convert.ToBase64String(hashed);
             }
 
         }
@@ -80,13 +80,9 @@ namespace njBlockChain.Models
         {//check if this proof is fine or not
             using (SHA256 sha = SHA256.Create())
             {
-                string salt = $"{last_proof}{block.proof}";
-                byte[] saltbyte = Encoding.UTF8.GetBytes(salt);
-                byte[] hashed = sha.ComputeHash(saltbyte);
+                string hashed64 = Hash(block); 
 
-                string hashed64 = Convert.ToBase64String(hashed).Replace("-", "");
-
-                return hashed64.Substring(hashed64.Length - VALID_PROOF_LEN + 1, VALID_PROOF_LEN).Equals(VALID_PROOF_STR);
+                return hashed64.Substring(hashed64.Length - (VALID_PROOF_LEN + 1), VALID_PROOF_LEN).Equals(VALID_PROOF_STR);
             }
         }
         private Block proof_of_work(long lastProof)
