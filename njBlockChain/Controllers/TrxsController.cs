@@ -42,11 +42,11 @@ namespace njBlockChain.Controllers
                 //return new Result { Message = $"trx added to Block index{block_index}" };
         }
 
-
+        /*
         // DELETE api/<TrxsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }

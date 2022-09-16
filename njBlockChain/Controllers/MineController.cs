@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace njBlockChain
 {  [ApiController]
     [Route("[controller]")]
-    class MineController: ControllerBase
+  public  class MineController: ControllerBase
     {
         private readonly BlockChain _blockChain;
 
@@ -26,7 +26,7 @@ namespace njBlockChain
         [HttpGet]
         public IEnumerable<Block> Get()
         {
-            _logger.LogInformation("add a new trxs");
+            _logger.LogInformation("get mempool");
 
             return _blockChain.Chain;
         }
