@@ -13,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 
 namespace njBlockChain
 {
@@ -33,6 +35,10 @@ namespace njBlockChain
 
             services.AddSingleton<BlockChain>();
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +47,7 @@ namespace njBlockChain
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
 
             app.UseHttpsRedirection();
@@ -49,10 +56,16 @@ namespace njBlockChain
 
             app.UseAuthentication();
             app.UseAuthorization();
+                app.UseSwagger();
 
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "nj BlockChain API V1");
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+              
             });
         }
     }
