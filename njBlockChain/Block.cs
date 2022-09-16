@@ -9,7 +9,7 @@ namespace njBlockChain
     {
         public long Index { set; get; }
 
-        public DateTime timestamp { set; get; }
+        public long timestamp { set; get; }
 
         public Trx [] trxes { set; get; }
 
@@ -19,10 +19,15 @@ namespace njBlockChain
 
         public override string ToString()
         {
-            return string.Format("{0}{1}{2}{3}{4}" ,this.Index,
-                this.timestamp,
-                string.Join(';', this.trxes.Select(x=>x.ToString())),
-                this.proof,this.previous_hash);
+            try
+            {
+                return string.Format("{0}{1}{2}{3}{4}", this.Index,
+                    this.timestamp,
+                    string.Join(';', this.trxes.Select(x => x.ToString())),
+                    this.proof, this.previous_hash);
+            }
+            catch { }
+            return "not init";
         }
     }
 }
