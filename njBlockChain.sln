@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "njBlockChain", "njBlockChain\njBlockChain.csproj", "{3B35C2AB-CAD4-45AD-A46A-15AA40FF95DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "njBlockChain", "njBlockChain\njBlockChain.csproj", "{5DE5FB56-4086-4B5F-933D-698ECE0B1CD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3B35C2AB-CAD4-45AD-A46A-15AA40FF95DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B35C2AB-CAD4-45AD-A46A-15AA40FF95DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B35C2AB-CAD4-45AD-A46A-15AA40FF95DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B35C2AB-CAD4-45AD-A46A-15AA40FF95DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DE5FB56-4086-4B5F-933D-698ECE0B1CD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DE5FB56-4086-4B5F-933D-698ECE0B1CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DE5FB56-4086-4B5F-933D-698ECE0B1CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DE5FB56-4086-4B5F-933D-698ECE0B1CD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A889E15C-7E3F-401D-AA53-7FFB101B14AB}
+		SolutionGuid = {F26C86F6-CE0C-47C2-876F-037CCFBAC543}
 	EndGlobalSection
 EndGlobal
