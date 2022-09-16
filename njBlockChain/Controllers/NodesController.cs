@@ -12,32 +12,30 @@ namespace njBlockChain.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class NodesController : ControllerBase
     {
-        private readonly ILogger<UsersController> _logger;
+        private readonly ILogger<NodesController> _logger;
         private readonly BlockChain _blockChain;
-        public UsersController(ILogger<UsersController> logger, BlockChain blockChain)
+        public NodesController(ILogger<NodesController> logger, BlockChain blockChain)
         {
             _logger = logger;
             _blockChain = blockChain;
         }
 
-        // GET: api/<UsersController>
+        // GET: api/<NodesController>
         [HttpGet]
-        public IEnumerable<KeyValuePair< string,string>> Get()
+        public IEnumerable<string> Get()
         {
-            return  _blockChain.Users;
+            return _blockChain.Nodes;
+        }         
+
+        // POST api/<NodesController>
+        [HttpPost]
+        public void Post(string node_address)
+        {
+            _blockChain.RegisterNode(node_address);
         }
 
-        // GET api/<UsersController>/5
-        [HttpGet("{username}")]
-        public string Get(string username)
-        {
-          string id=   _blockChain.RegisterUser(username);
-           
-            return  id;
-        }
-
-      
+       
     }
 }

@@ -21,25 +21,26 @@ namespace njBlockChain
             _blockChain = blockChain;
             _logger = logger;
         }
- 
 
-        [HttpGet]
-        public IEnumerable<Block> Get()
-        {
-            _logger.LogInformation("get mempool");
-
-            return _blockChain.Chain;
-        }
-
-        
-        [HttpGet ("{id}")]
-        public Block Get(Guid id)
+        [HttpGet("{uid}")]
+        public Block Get(Guid uid)
         {
             _logger.LogInformation("Mine: run the proof of work algorithm to get the next proof");
 
-            return _blockChain.MineCurrentBlock(id.ToString());
+            return _blockChain.MineCurrentBlock(uid.ToString());
         }
 
-       
+        [HttpGet]
+        public async Task< dynamic> Consensus()
+        {
+            _logger.LogInformation("Resolve confilicts");
+
+            var result =await _blockChain.ResolveConflict();
+            if (result)
+                return new { Message = "Chain replaced!" };
+            return new { Message = "Im the best!" }; 
+        }
+
+
     }
 }
